@@ -96,19 +96,19 @@ function createTeam() {
 async function main() {
     inquirer.prompt(typeQuestions).then(async({
         name,
-        employeeId,
+        memId,
         email,
-        employeeOption
+        memberRole
     }) => {
-        switch (employeeOption) {
+        switch (memberRole) {
             case 'Engineer':
-                await createEngineer(name, employeeId, email);
+                await createEngineer(name, memId, email);
                 break;
             case 'Intern':
-                await createIntern(name, employeeId, email);
+                await createIntern(name, memId, email);
                 break;
             case 'Manager':
-                await createManager(name, employeeId, email);
+                await createManager(name, memId, email);
                 break;
         }
         inquirer.prompt([{
